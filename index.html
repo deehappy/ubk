@@ -337,9 +337,319 @@
                 font-size: 1.1em;
             }
         }
+        /* CSS สำหรับประกาศเลื่อนโครงการ - ธีมเดิม */
+        .ubk-announcement-banner {
+            background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);
+            color: white;
+            text-align: center;
+            padding: 25px 20px;
+            margin-bottom: 20px;
+            border-radius: 15px;
+            box-shadow: 0 8px 32px rgba(231, 76, 60, 0.3);
+            position: relative;
+            overflow: hidden;
+            animation: slideDown 0.8s ease-out;
+        }
+
+        .ubk-announcement-banner::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #fff 0%, #f39c12 25%, #fff 50%, #f39c12 75%, #fff 100%);
+            background-size: 200% 100%;
+            animation: shimmer 2s linear infinite;
+        }
+
+        .ubk-announcement-banner::after {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+            animation: rotate 6s linear infinite;
+            pointer-events: none;
+        }
+
+        .ubk-announcement-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .ubk-close-btn {
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            border: 2px solid rgba(255, 255, 255, 0.5);
+            border-radius: 50%;
+            width: 30px;
+            height: 30px;
+            font-size: 14px;
+            font-weight: bold;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+        }
+
+        .ubk-close-btn:hover {
+            background: rgba(255, 255, 255, 0.3);
+            border-color: rgba(255, 255, 255, 0.8);
+            transform: scale(1.1);
+        }
+
+        .ubk-announcement-icon {
+            font-size: 40px;
+            margin-bottom: 10px;
+            display: block;
+            animation: bounce 2s infinite;
+        }
+
+        .ubk-announcement-title {
+            font-size: 1.8em;
+            font-weight: bold;
+            margin-bottom: 8px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            letter-spacing: 0.5px;
+        }
+
+        .ubk-announcement-subtitle {
+            font-size: 1.1em;
+            margin-bottom: 15px;
+            opacity: 0.95;
+            font-weight: 300;
+        }
+
+        .ubk-announcement-main {
+            background: rgba(255, 255, 255, 0.15);
+            padding: 20px;
+            border-radius: 12px;
+            margin: 15px auto;
+            max-width: 800px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .ubk-announcement-text {
+            font-size: 1.2em;
+            line-height: 1.5;
+            margin-bottom: 15px;
+        }
+
+        .ubk-new-date {
+            background: linear-gradient(135deg, #f39c12 0%, #e67e22 100%);
+            color: white;
+            padding: 15px 25px;
+            border-radius: 25px;
+            font-size: 1.3em;
+            font-weight: bold;
+            margin: 15px 0;
+            display: inline-block;
+            box-shadow: 0 6px 20px rgba(243, 156, 18, 0.4);
+            animation: pulse 2s infinite;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+        }
+
+        .ubk-occasion {
+            font-size: 1em;
+            margin-top: 10px;
+            padding: 8px 15px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 20px;
+            display: inline-block;
+            backdrop-filter: blur(5px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .ubk-apology {
+            font-size: 1em;
+            margin-top: 15px;
+            font-style: italic;
+            opacity: 0.9;
+        }
+
+        .ubk-sparkles {
+            position: absolute;
+            font-size: 20px;
+            animation: sparkle 3s linear infinite;
+            pointer-events: none;
+        }
+
+        .ubk-sparkles:nth-child(1) {
+            top: 15%;
+            left: 10%;
+            animation-delay: 0s;
+        }
+
+        .ubk-sparkles:nth-child(2) {
+            top: 25%;
+            right: 12%;
+            animation-delay: 1s;
+        }
+
+        .ubk-sparkles:nth-child(3) {
+            bottom: 20%;
+            left: 15%;
+            animation-delay: 2s;
+        }
+
+        .ubk-sparkles:nth-child(4) {
+            bottom: 30%;
+            right: 20%;
+            animation-delay: 0.5s;
+        }
+
+        /* Animation Keyframes */
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-100px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes shimmer {
+            0% { background-position: -200% 0; }
+            100% { background-position: 200% 0; }
+        }
+
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateY(0);
+            }
+            40% {
+                transform: translateY(-8px);
+            }
+            60% {
+                transform: translateY(-4px);
+            }
+        }
+
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+                box-shadow: 0 6px 20px rgba(243, 156, 18, 0.4);
+            }
+            50% {
+                transform: scale(1.05);
+                box-shadow: 0 8px 25px rgba(243, 156, 18, 0.6);
+            }
+            100% {
+                transform: scale(1);
+                box-shadow: 0 6px 20px rgba(243, 156, 18, 0.4);
+            }
+        }
+
+        @keyframes sparkle {
+            0%, 100% {
+                opacity: 0;
+                transform: scale(0.5) rotate(0deg);
+            }
+            50% {
+                opacity: 1;
+                transform: scale(1) rotate(180deg);
+            }
+        }
+
+        @keyframes fadeOut {
+            from { 
+                opacity: 1; 
+                transform: translateY(0);
+            }
+            to { 
+                opacity: 0; 
+                transform: translateY(-50px);
+            }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .ubk-announcement-banner {
+                padding: 20px 15px;
+                margin-bottom: 15px;
+            }
+            
+            .ubk-announcement-title {
+                font-size: 1.5em;
+            }
+            
+            .ubk-announcement-subtitle {
+                font-size: 1em;
+            }
+            
+            .ubk-announcement-main {
+                padding: 15px;
+                margin: 10px;
+            }
+            
+            .ubk-announcement-text {
+                font-size: 1.1em;
+            }
+            
+            .ubk-new-date {
+                font-size: 1.1em;
+                padding: 12px 20px;
+            }
+            
+            .ubk-announcement-icon {
+                font-size: 35px;
+            }
+        }
     </style>
+    
 </head>
 <body>
+    <!-- เพิ่ม HTML นี้ทันทีหลัง <div class="container"> ในไฟล์เดิม -->
+    <div id="ubkAnnouncementBanner" class="ubk-announcement-banner">
+        <div class="ubk-sparkles">✨</div>
+        <div class="ubk-sparkles">⭐</div>
+        <div class="ubk-sparkles">✨</div>
+        <div class="ubk-sparkles">⭐</div>
+        
+        <button class="ubk-close-btn" onclick="closeUbkAnnouncement()" title="ปิดประกาศ">×</button>
+        
+        <div class="ubk-announcement-content">
+            <span class="ubk-announcement-icon">📢</span>
+            <h2 class="ubk-announcement-title">ประกาศสำคัญ</h2>
+            <p class="ubk-announcement-subtitle">เรื่อง การเลื่อนโครงการบวชอุบาสิกาแก้ว</p>
+            
+            <div class="ubk-announcement-main">
+                <!-- <p class="ubk-announcement-text">
+                    เนื่องจากการจัดงานในวันแม่แห่งชาติ<br>
+                    จึงขอเลื่อน<strong>โครงการบวชอุบาสิกาแก้ว</strong> ออกไป
+                </p> -->
+                
+                <div class="ubk-new-date">
+                    🗓️ เป็นวันที่ 29-31 สิงหาคม 2568
+                </div>
+                
+                    <!-- <div class="ubk-occasion">
+                        🌸 เนื่องในวันแม่แห่งชาติ 🌸
+                    </div> -->
+                
+                <p class="ubk-apology">
+                    🙏 ขออภัยในความไม่สะดวก และขออนุโมทนาบุญ 🙏
+                </p>
+            </div>
+        </div>
+    </div>
     <div class="container">
         <header>
             <div class="dharma-wheel"></div>
@@ -349,7 +659,7 @@
             <div class="subtitle">สมเด็จพระนางเจ้าสิริกิติ์ พระบรมราชินีนาถ พระบรมราชชนนีพันปีหลวง</div>
             <div class="subtitle">กตัญญูบูชาพระคุณบิดา-มารดา เนื่องในวันแม่แห่งชาติ (12 สิงหาคม 2568)</div>
             <div class="date-info">
-                🗓️ ระหว่างวันที่ 1-3 สิงหาคม พ.ศ. 2568<br>
+                🗓️ ระหว่างวันที่ 29-31 สิงหาคม พ.ศ. 2568<br>
                 📍 ณ อาคาร 115 ปี คุณยายอาจารย์ มหารัตนอุบาสิกาจันทร์ ขนนกยูง<br>
                 วัดพระธรรมกาย อ.คลองหลวง จ.ปทุมธานี
             </div>
@@ -363,7 +673,7 @@
                     <p style="font-size: 1.1em; margin-bottom: 20px;">
                         กรุณากรอกข้อมูลให้ครบถ้วนเพื่อลงทะเบียนเข้าร่วมโครงการ
                     </p>
-                    <a href="https://forms.gle/zSBQR1NkyAP8dnRz7" class="registration-button" target="_blank" style="background: #ff6b00;">
+                         <a href="https://forms.gle/zSBQR1NkyAP8dnRz7" class="registration-button" target="_blank" style="background: #ff6b00;">
                         ✅ สมัครเข้าร่วมโครงการ
                     </a>
                 </div>
@@ -374,7 +684,7 @@
                         ผู้เคยเข้าปฏิบัติธรรมครั้ง 1 (3-5 พ.ค. 2568)
                     </p>
                     <a href="https://forms.gle/2L8v8Skkcm3LsViM8" class="registration-button" target="_blank">
-                         สมัครสำหรับผู้เคยเข้าร่วม
+                        สมัครสำหรับผู้เคยเข้าร่วม
                     </a>
                 </div>
             </div>
@@ -389,7 +699,7 @@
             <h2>📋 กำหนดการโครงการ</h2>
             
             <div class="day-schedule">
-                <h3>🗓️ วันศุกร์ที่ 1 สิงหาคม 2568</h3>
+                <h3>🗓️ วันศุกร์ที่ 29 สิงหาคม 2568</h3>
                 <table>
                     <thead>
                         <tr>
@@ -415,7 +725,7 @@
             </div>
             
             <div class="day-schedule">
-                <h3>🗓️ วันเสาร์ที่ 2 สิงหาคม 2568</h3>
+                <h3>🗓️ วันเสาร์ที่ 30 สิงหาคม 2568</h3>
                 <table>
                     <thead>
                         <tr>
@@ -461,7 +771,7 @@
             </div>
             
             <div class="day-schedule">
-                <h3>🗓️ วันอาทิตย์ที่ 3 สิงหาคม 2568</h3>
+                <h3>🗓️ วันอาทิตย์ที่ 31 สิงหาคม 2568</h3>
                 <table>
                     <thead>
                         <tr>
@@ -488,7 +798,8 @@
                         </tr>
                         <tr>
                             <td>09:00 น.</td>
-                            <td>นั่งสมาธิ, บูชาข้าวพระ</td>
+                            <td>นั่งสมาธิ</td>
+                            <!-- <td>นั่งสมาธิ, บูชาข้าวพระ</td> -->
                         </tr>
                         <tr>
                             <td>11:00 น.</td>
@@ -605,3 +916,101 @@
     </div>
 </body>
 </html>
+<!-- เพิ่ม JavaScript นี้ก่อน </body> ในไฟล์เดิม -->
+<script>
+// JavaScript สำหรับประกาศ
+function closeUbkAnnouncement() {
+    const banner = document.getElementById('ubkAnnouncementBanner');
+    banner.style.animation = 'fadeOut 0.5s ease-out forwards';
+    setTimeout(() => {
+        banner.style.display = 'none';
+        // บันทึกสถานะที่ปิดแล้ว (ถ้าต้องการ)
+        localStorage.setItem('ubkAnnouncementClosed', 'true');
+    }, 500);
+}
+
+// ฟังก์ชันเริ่มต้นเมื่อโหลดหน้า
+document.addEventListener('DOMContentLoaded', function() {
+    // ถ้าต้องการให้แสดงประกาศทุกครั้ง ให้ comment บรรทัดด้านล่างนี้
+    // if (localStorage.getItem('ubkAnnouncementClosed') === 'true') {
+    //     document.getElementById('ubkAnnouncementBanner').style.display = 'none';
+    //     return;
+    // }
+
+    const banner = document.getElementById('ubkAnnouncementBanner');
+    const newDate = document.querySelector('.ubk-new-date');
+    
+    // เพิ่มเอฟเฟกต์เมื่อ hover ที่แบนเนอร์
+    banner.addEventListener('mouseenter', function() {
+        this.style.transform = 'translateY(-2px)';
+        this.style.boxShadow = '0 12px 40px rgba(231, 76, 60, 0.4)';
+        this.style.transition = 'all 0.3s ease';
+    });
+    
+    banner.addEventListener('mouseleave', function() {
+        this.style.transform = 'translateY(0)';
+        this.style.boxShadow = '0 8px 32px rgba(231, 76, 60, 0.3)';
+    });
+
+    // เพิ่มเอฟเฟกต์เมื่อคลิกที่วันที่
+    newDate.addEventListener('click', function() {
+        // สร้าง confetti effect
+        createUbkConfetti();
+        
+        // เพิ่มเอฟเฟกต์ชั่วคราว
+        this.style.animation = 'none';
+        setTimeout(() => {
+            this.style.animation = 'pulse 2s infinite';
+        }, 10);
+    });
+
+    // ปิดประกาศด้วยปุ่ม ESC
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') {
+            closeUbkAnnouncement();
+        }
+    });
+});
+
+// ฟังก์ชันสร้าง confetti
+function createUbkConfetti() {
+    const colors = ['#e74c3c', '#f39c12', '#fff', '#f1c40f', '#e67e22'];
+    const banner = document.getElementById('ubkAnnouncementBanner');
+    
+    for (let i = 0; i < 15; i++) {
+        const confetti = document.createElement('div');
+        confetti.style.position = 'absolute';
+        confetti.style.width = '8px';
+        confetti.style.height = '8px';
+        confetti.style.background = colors[Math.floor(Math.random() * colors.length)];
+        confetti.style.borderRadius = '50%';
+        confetti.style.left = Math.random() * 100 + '%';
+        confetti.style.top = '10px';
+        confetti.style.pointerEvents = 'none';
+        confetti.style.animation = 'confettiFall 2s linear forwards';
+        confetti.style.zIndex = '10';
+        
+        banner.appendChild(confetti);
+        
+        setTimeout(() => {
+            confetti.remove();
+        }, 2000);
+    }
+}
+
+// เพิ่ม CSS สำหรับ confetti animation
+const ubkStyle = document.createElement('style');
+ubkStyle.textContent = `
+    @keyframes confettiFall {
+        0% {
+            transform: translateY(0) rotate(0deg);
+            opacity: 1;
+        }
+        100% {
+            transform: translateY(150px) rotate(360deg);
+            opacity: 0;
+        }
+    }
+`;
+document.head.appendChild(ubkStyle);
+</script>
